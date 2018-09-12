@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Visualization with D3: Add Document Elements with D3</title>
+  <title>Data Visualization with D3: Select a Group of Elements with D3</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src='https://d3js.org/d3.v4.min.js'></script>
 </head>
 <body>
+  <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+  </ul>
+  <script>
+    // Add your code below this line
+    d3.selectAll('li')
+      .text('list item')
 
-<script>
-    d3.select('body')
-    .append('h1')
-    .text('Learning D3')
-</script>  
+
+      // Add your code above this line
+  </script 
 </body>
 </html>
