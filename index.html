@@ -4,8 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
-    Data Visualization with D3: 
-    Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
+    Data Visualization with D3: Use Dynamic Scales
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
@@ -13,13 +12,40 @@
 </head>
 <body>
   <script>
-    const positionData = [[1, 7, -4], [6, 3, 8], [2, 8, 3]]
+    const dataset = [
+      [34, 78],
+      [109, 280],
+      [310, 120],
+      [79, 411],
+      [420, 220],
+      [233, 145],
+      [333, 96],
+      [222, 333],
+      [78, 320],
+      [21, 123]
+    ];
+
+    const w = 500;
+    const h = 500;
+
+    // Padding between the SVG canvas boundary and the plot
+    const padding = 30;
+
+    // Create an x and y scale
+
+    const xScale = d3.scaleLinear()
+      .domain([0, d3.max(dataset, (d) => d[0])])
+      .range([padding, w - padding]);
+
     // Add your code below this line
 
-    const output = d3.max(positionData, (d) => d[2]) // Change this line
+    const yScale = d3.scaleLinear()
+      .domain([0, d3.max(dataset, (d) => d[1])])
+      .range([(h-padding), padding])
 
     // Add your code above this line
 
+    const output = yScale(411); // Returns 30
     d3.select("body")
       .append("h2")
       .text(output)
