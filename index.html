@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Visualization with D3: Add Inline Styling to Elements
+  <title>Data Visualization with D3: Change Styles Based on Data
 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
@@ -18,10 +18,13 @@
     .data(dataset)
     .enter()
     .append('h2')
-    .text((d) => `${d} USD`);
+    .text((d) => `${d} USD`)
     // Add your code below this line
 
-    .style("font-family", "verdana")
+    .style('color', (d) => {
+      if (d < 20) { return 'red' }
+      else { return 'green' }
+    })
 
     // Add your code above this line
   </script>
