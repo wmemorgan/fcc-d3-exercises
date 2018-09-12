@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
-    Data Visualization with D3: Create a Linear Scale with D3
+    Data Visualization with D3: Set a Domain and a Range on a Scale
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
@@ -13,16 +13,15 @@
 <body>
   <script>
     // Add your code below this line
+    const scale = d3.scaleLinear();
 
-    const scale = d3.scaleLinear(); // Create the scale here
-    const output = scale(50); // Call the scale with an argument here
+    scale.domain([250, 500]).range([10, 150])
 
     // Add your code above this line
-
+    const output = scale(50);
     d3.select("body")
       .append("h2")
       .text(output);
-
   </script>
 </body>
 </html>
