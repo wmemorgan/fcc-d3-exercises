@@ -3,18 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Visualization with D3: Learn About SVG in D3
+  <title>Data Visualization with D3: Display Shapes with SVG
 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src='https://d3js.org/d3.v4.min.js'></script>
-
-<style>
-  svg {
-    background-color: pink;
-  }
-</style>
-
 </head>
 <body>
   <script>
@@ -24,11 +17,16 @@
     const h = 100;
 
     const svg = d3.select("body")
-    // Add your code below this line
-    
       .append('svg')
       .attr('width', w)
       .attr('height', h)
+    // Add your code below this line
+      
+      .append('rect')
+      .attr('width', 25)
+      .attr('height', 100)
+      .attr('x', 0)
+      .attr('y', 0)
 
     // Add your code above this line
   </script>
