@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
-    Data Visualization with D3: Add Labels to D3 Elements
+    Data Visualization with D3: Style D3 Labels
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
@@ -29,20 +29,23 @@
       .attr("x", (d, i) => i * 30)
       .attr("y", (d, i) => h - 3 * d)
       .attr("width", 25)
-      .attr("height", (d, i) => 3 * d)
+      .attr("height", (d, i) => d * 3)
       .attr("fill", "navy");
 
     svg.selectAll("text")
       .data(dataset)
       .enter()
-      // Add your code below this line
-
-      .append('text')
-      .text((d) => d )
+      .append("text")
+      .text((d) => d)
       .attr("x", (d, i) => i * 30)
-      .attr("y", (d, i) => (h-3) - (3 * d))
+      .attr("y", (d, i) => h - (3 * d) - 3)
+         // Add your code below this line
 
-      // Add your code above this line
+      .attr('fill', 'red')
+      .style('font-size', '25px')
+
+
+         // Add your code above this line
   </script>
 </body>
 </html>
