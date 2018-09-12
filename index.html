@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
-    Data Visualization with D3: Create a Scatterplot with SVG Circles
+    Data Visualization with D3: Add Attributes to the Circle Elements
 
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,18 +36,15 @@
       .attr("height", h);
 
     svg.selectAll("circle")
-       // Add your code below this line
-
       .data(dataset)
       .enter()
-      .append('circle')
-      .attr('x', (d, i) => i * 30)
-      .attr('y', (d, i) => {
-        return h - (d*3)
-      })
-      .attr("width", 25)
-      .attr("height", (d, i) => 3 * d);
+      .append("circle")
+       // Add your code below this line
       
+      .attr('cx', d => d[0])
+      .attr('cy', d => h - d[1])
+      .attr('r', 5)
+
 
        // Add your code above this line
 
