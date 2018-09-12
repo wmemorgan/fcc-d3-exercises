@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Change the Color of an SVG Element
-</title>
+  <title>
+    Data Visualization with D3: Add Labels to D3 Elements
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src='https://d3js.org/d3.v4.min.js'></script>
@@ -29,11 +30,19 @@
       .attr("y", (d, i) => h - 3 * d)
       .attr("width", 25)
       .attr("height", (d, i) => 3 * d)
-         // Add your code below this line
-    
-      .attr('fill', 'navy')
+      .attr("fill", "navy");
 
-         // Add your code above this line
+    svg.selectAll("text")
+      .data(dataset)
+      .enter()
+      // Add your code below this line
+
+      .append('text')
+      .text((d) => d )
+      .attr("x", (d, i) => i * 30)
+      .attr("y", (d, i) => (h-3) - (3 * d))
+
+      // Add your code above this line
   </script>
 </body>
 </html>
