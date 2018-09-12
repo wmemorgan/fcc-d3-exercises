@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Visualization with D3: Display Shapes with SVG
+  <title>Data Visualization with D3: Create a Bar for Each Data Point in the Set
 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
@@ -20,15 +20,19 @@
       .append('svg')
       .attr('width', w)
       .attr('height', h)
+
+    svg.selectAll('rect')
     // Add your code below this line
       
+      .data(dataset)
+      .enter()
       .append('rect')
+
+    // Add your code above this line  
       .attr('width', 25)
       .attr('height', 100)
       .attr('x', 0)
       .attr('y', 0)
-
-    // Add your code above this line
   </script>
 </body>
 </html>
