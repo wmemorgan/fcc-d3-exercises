@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Visualization with D3: Work with Data in D3</title>
+  <title>Data Visualization with D3: Work with Dynamic Data in D3</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src='https://d3js.org/d3.v4.min.js'></script>
@@ -17,7 +17,10 @@
     .data(dataset)
     .enter()
     .append('h2')
-    .text('New Title')
+    // Add your code below this line
+
+    .text((d) => `${d} USD`);
+
     // Add your code above this line
   </script>
 </body>
