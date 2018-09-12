@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Visualization with D3: Add Classes with D3
+  <title>Data Visualization with D3: Update the Height of an Element Dynamically
 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
@@ -27,11 +27,12 @@
       .data(dataset)
       .enter()
       .append("div")
-        // Add your code below this line
       .attr('class', 'bar')
+      // Add your code below this line
+      .style(`height`, (d) => `${d}px`)
 
 
-        // Add your code above this line
+      // Add your code above this line
   </script>
 </body>
 </html>
