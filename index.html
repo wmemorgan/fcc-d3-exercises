@@ -4,55 +4,52 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
-    Data Visualization with D3: Add a Tooltip to a D3 Element
+    Data Visualization with D3: Create a Scatterplot with SVG Circles
+
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src='https://d3js.org/d3.v4.min.js'></script>
-
-  <style>
-    .bar:hover {
-      fill: brown;
-    }
-  </style>
 </head>
 <body>
   <script>
-    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+    const dataset = [
+      [34, 78],
+      [109, 280],
+      [310, 120],
+      [79, 411],
+      [420, 220],
+      [233, 145],
+      [333, 96],
+      [222, 333],
+      [78, 320],
+      [21, 123]
+    ];
+
 
     const w = 500;
-    const h = 100;
+    const h = 500;
 
     const svg = d3.select("body")
       .append("svg")
       .attr("width", w)
       .attr("height", h);
 
-    svg.selectAll("rect")
+    svg.selectAll("circle")
+       // Add your code below this line
+
       .data(dataset)
       .enter()
-      .append("rect")
-      .attr("x", (d, i) => i * 30)
-      .attr("y", (d, i) => h - 3 * d)
+      .append('circle')
+      .attr('x', (d, i) => i * 30)
+      .attr('y', (d, i) => {
+        return h - (d*3)
+      })
       .attr("width", 25)
-      .attr("height", (d, i) => d * 3)
-      .attr("fill", "navy")
-      .attr("class", "bar")
-    // Add your code below this line
+      .attr("height", (d, i) => 3 * d);
+      
 
-      .append('title')
-      .text(d => d)
-
-
-    // Add your code above this line
-
-    svg.selectAll("text")
-      .data(dataset)
-      .enter()
-      .append("text")
-      .text((d) => d)
-      .attr("x", (d, i) => i * 30)
-      .attr("y", (d, i) => h - (d * 3 + 3))
+       // Add your code above this line
 
   </script>
 </body>
